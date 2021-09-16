@@ -49,9 +49,41 @@
                 <td style="border: solid;">jacobs creek</td>
                 <td style="border: solid;">USA</td>
                 <td style="border: solid;">$5</td>
-                
+
             </tr>
+
           </table>
+          <hr>
+          <h3> CODE DISPLAY SECTION</h3>
+          <blockquote>
+              <p>The problem of finding the shortest path between two intersections on a road map may be modeled as a special case of
+                   the shortest path problem in graphs, where the vertices correspond to intersections and the edges correspond to road 
+                   segments, each weighted by the length of the segment.
+
+
+            </p>
+          </blockquote>
+          <a href="https://en.wikipedia.org/wiki/Shortest_path_problem">link to the source code for graph Graphs Traversal/connected/shortest paths.</a>
+          <pre>
+            vector<vector<int>> adj; // graph represented as an adjacency list
+                int n; // number of vertices
+                
+                vector<int> color;
+                
+                vector<int> time_in, time_out;
+                int dfs_timer = 0;
+                
+                void dfs(int v) {
+                    time_in[v] = dfs_timer++;
+                    color[v] = 1;
+                    for (int u : adj[v])
+                        if (color[u] == 0)
+                            dfs(u);
+                    color[v] = 2;
+                    time_out[v] = dfs_timer++;
+                }
+          </pre>
+          <a href="https://cp-algorithms.com/graph/depth-first-search.html">quick link to source code</a>
           
     
 
